@@ -31,7 +31,7 @@ func GetTFList(mirrorURL string, preRelease bool) ([]string, error) {
 	} else if preRelease == false {
 		// Getting versions from body; should return match /X.X.X/ where X is a number
 		// without the ending '"' pre-release folders would be tried and break.
-		semver = `\/(\d+\.\d+\.\d+)\"`
+		semver = `/(\d+.\d+.\d+)/?"`
 	}
 	r, _ := regexp.Compile(semver)
 	for i := range result {
